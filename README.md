@@ -16,10 +16,6 @@ This GitHub Action allows you to send messages to a Discord channel using a webh
 
 **Required** The message you want to send.
 
-## Outputs
-
-### `status`
-
 The status of the action execution. '0' indicates success.
 
 ## Example usage
