@@ -1,0 +1,23 @@
+{
+  "name": "Send_Discord_Message_Action",
+  "version": "1.0.0",
+  "description": "This GitHub Action allows you to send messages to a Discord channel using a webhook.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Enichy/Send_Discord_Message_Action.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Enichy/Send_Discord_Message_Action/issues"
+  },
+  "homepage": "https://github.com/Enichy/Send_Discord_Message_Action#readme",
+  "dependencies": {
+    "@actions/core": "^1.0.0"
+  }
+}
