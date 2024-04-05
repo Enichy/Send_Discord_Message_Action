@@ -27,11 +27,12 @@ function validate_inputs()
 async function run() {
     try {
         validate_inputs();
-        const github_token = getInput('github_token');
-        const discord_webhook = getInput('discord_webhook');
-        const message = getInput('message');
+        const github_token = core.getInput('github_token');
+        const discord_webhook = core.getInput('discord_webhook');
+        const message = core.getInput('message');
         
-        const command = `curl -X POST -H 'Content-type: application/json' --data '{"content": "${message}"}' ${discord_webhook}`;
+        const jsonData = JSON.stringify({ content: message });
+        const command = `curl -X POST -H 'Content-type: application/json' --data '${jsonData}' ${discord_webhook}`;
 
         await exec.exec(command, [], { env: { GITHUB_TOKEN: github_token } });
 
