@@ -5,8 +5,12 @@
 ** index.js
 */
 
-import { getInput, setOutput, setFailed } from '@actions/core';
-import exec from '@actions/exec';
+const core = require('@actions/core');
+const exec = require('@actions/exec');
+
+const getInput = core.getInput;
+const setOutput = core.setOutput;
+const setFailed = core.setFailed;
 
 function validate_inputs()
 {
