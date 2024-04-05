@@ -1,0 +1,22 @@
+name: 'Send Discord Message'
+description: 'This simple action permit you to send some messages to a Discord channel, using a webhook.'
+author: 'Enichy'
+branding:
+  icon: 'message-square'
+  color: 'blue'
+inputs:
+  github_token:
+    description: 'User GitHub token'
+    required: true
+  webhook_url:
+    description: 'Webhook URL'
+    required: true
+  message:
+    description: 'Message to send'
+    required: true
+outputs:
+  status:
+    description: 'The status of the action execution'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
