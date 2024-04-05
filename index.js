@@ -14,30 +14,30 @@ const setFailed = core.setFailed;
 
 function validate_inputs()
 {
-    if (!getInput('github_token')) {
+    if (!core.getInput('github_token')) {
         throw new Error('Missing github_token input');
     }
-    if (!getInput('discord_webhook')) {
+    if (!core.getInput('discord_webhook')) {
         throw new Error('Missing discord_webhook input');
     }
-    if (!getInput('message')) {
+    if (!core.getInput('message')) {
         throw new Error('Missing message input');
     }
 }
 async function run() {
     try {
+        validate_inputs();
         const github_token = getInput('github_token');
         const discord_webhook = getInput('discord_webhook');
         const message = getInput('message');
         
-        validate_inputs();
         const command = `curl -X POST -H 'Content-type: application/json' --data '{"content": "${message}"}' ${discord_webhook}`;
 
         await exec.exec(command, [], { env: { GITHUB_TOKEN: github_token } });
 
-        setOutput('status', '0');
+        core.setOutput('status', '0');
     } catch (error) {
-        setFailed(error.message);
+        core.setFailed(error.message);
     }
 }
 
