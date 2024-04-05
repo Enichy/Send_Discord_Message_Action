@@ -18,5 +18,5 @@ outputs:
   status:
     description: 'The status of the action execution'
 runs:
-  using: 'node12'
-  main: 'dist/index.js'
+  using: 'docker'
+  image: 'Dockerfile'
