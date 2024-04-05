@@ -7,4 +7,4 @@ COPY . .
 RUN npm install
 RUN npm install -g @vercel/ncc && ncc build index.js -o dist
 
-ENTRYPOINT ["node", "/app/dist/index.js"]
+ENTRYPOINT ["node", "/app/index.js"]
