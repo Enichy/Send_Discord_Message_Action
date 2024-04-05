@@ -8,7 +8,7 @@ inputs:
   github_token:
     description: 'User GitHub token'
     required: true
-  webhook_url:
+  discord_webhook:
     description: 'Webhook URL'
     required: true
   message:
