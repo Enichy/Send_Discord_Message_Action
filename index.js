@@ -24,6 +24,7 @@ function validate_inputs()
         throw new Error('Missing message input');
     }
 }
+
 async function run() {
     try {
         validate_inputs();
@@ -32,9 +33,8 @@ async function run() {
         const message = core.getInput('message');
         
         const jsonData = JSON.stringify({ content: message });
-        const command = `curl -X POST -H 'Content-type: application/json' --data '${jsonData}' ${discord_webhook}`;
 
-        await exec.exec(command, [], { env: { GITHUB_TOKEN: github_token } });
+        await exec.exec('curl', ['-X', 'POST', '-H', 'Content-type: application/json', '--data', jsonData, discord_webhook], { env: { GITHUB_TOKEN: github_token } });
 
         core.setOutput('status', '0');
     } catch (error) {
