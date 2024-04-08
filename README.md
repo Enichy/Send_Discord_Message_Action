@@ -28,3 +28,4 @@ steps:
     github_token: ${{ secrets.GITHUB_TOKEN }}
     discord_webhook: ${{ secrets.DISCORD_WEBHOOK }}
     message: 'Hello, World!'
+```
