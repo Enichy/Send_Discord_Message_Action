@@ -15,7 +15,7 @@ More parameters and features will be available in the future.
 
 ### `message`
 
-**Required** The message you want to send. Else it will throw an error.
+**Required** The message you want to send. Otherwise it will throw an error.
 
 ## Example usage
 
